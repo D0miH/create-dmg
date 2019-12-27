@@ -168,7 +168,7 @@ async function init() {
 			ora.succeed('DMG created');
 		} catch (error) {
 			ora.fail(`Code signing failed. The DMG is fine, just not code signed.\n${error.stderr.trim()}`);
-			process.exit(2);
+			process.exit(0);
 		}
 	});
 
