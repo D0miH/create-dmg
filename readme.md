@@ -31,7 +31,9 @@ $ create-dmg --help
     $ create-dmg <app> [destination]
 
   Options
-    --overwrite  Overwrite existing DMG with the same name
+    --overwrite         Overwrite existing DMG with the same name
+    --identity=<value>  Manually set code signing identity (automatic by default)
+    --dmg-title=<value>  Manually set title of DMG volume (only used if app name is >27 character limit)
 
   Examples
     $ create-dmg 'Lungo.app'
@@ -47,7 +49,18 @@ It will try to code sign the DMG, but the DMG is still created and fine even if 
 
 <img src="screenshot-dmg.png" width="772">
 
+### DMG Icon
 
-## License
+[GraphicsMagick](http://www.graphicsmagick.org) is required to create the custom DMG icon that's based on the app icon and the macOS mounted device icon.
 
-MIT © [Sindre Sorhus](https://sindresorhus.com)
+#### Steps using Homebrew
+
+```
+$ brew install graphicsmagick imagemagick
+```
+
+#### Icon Example
+
+Original icon → DMG icon
+
+<img src="icon-example-app.png" width="300"><img src="icon-example.png" width="300">
