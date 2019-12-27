@@ -80,7 +80,7 @@ async function init() {
 	const appName = appInfo.CFBundleDisplayName || appInfo.CFBundleName;
 	const appIconName = appInfo.CFBundleIconFile.replace(/\.icns/, '');
 	const dmgTitle = appName.length > 27 ? (cli.flags['dmg-title'] || appName) : appName;
-	const dmgPath = path.join(destinationPath, `${appName} ${appInfo.CFBundleShortVersionString}.dmg`);
+	const dmgPath = path.join(destinationPath, `${appName}.dmg`);
 
 	if (cli.flags.overwrite) {
 		try {
